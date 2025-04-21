@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+.scroll-on-hover::-webkit-scrollbar {
+    width: 0px;
+    transition: height 0.3s ease;
+  }
+  
+  .scroll-on-hover:hover::-webkit-scrollbar {
+    width: 2px;
+  }
+  
+  .scroll-on-hover:hover::-webkit-scrollbar-thumb {
+    background: #989797;
+    border-radius: 10px;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+  .animate-bounce {
+    animation: bounce 1.5s infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }

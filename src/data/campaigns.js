@@ -1,0 +1,51 @@
+export const defaultCampaigns = [
+    {
+      id: 1,
+      name: "Summer Referral Program",
+      dateRange: "5/31/2024 - 8/30/2024",
+      referrals: 245,
+      conversion: "32%",
+      roi: "287%",
+      status: "Active",
+      note: "Increase reward by 10% to boost conversion rates during peak season.",
+    },
+    {
+      id: 2,
+      name: "Early Bird Special",
+      dateRange: "8/20/2024 - 9/19/2024",
+      referrals: 300,
+      conversion: "40%",
+      roi: "320%",
+      status: "Inactive",
+      note: "Extend your campaign! Strong engagement suggests higher conversions with more time.",
+    },
+  ];
+  export const linkClicksData = [
+    { month: 'Jan', clicks: 1200 },
+    { month: 'Feb', clicks: 2000 },
+    { month: 'Mar', clicks: 1500 },
+    { month: 'Apr', clicks: 3000 },
+    { month: 'May', clicks: 1800 },
+    { month: 'Jun', clicks: 2700 },
+    { month: 'Jul', clicks: 1900 },
+    { month: 'Aug', clicks: 2500 },
+    { month: 'Sep', clicks: 2900 },
+    { month: 'Oct', clicks: 2600 },
+    { month: 'Nov', clicks: 2100 },
+    { month: 'Dec', clicks: 2300 },
+  ];
+  
+  export const performanceData = [
+    { month: 'Jan', revenue: 400, conversion: 25 },
+    { month: 'Feb', revenue: 450, conversion: 30 },
+    { month: 'Mar', revenue: 430, conversion: 28 },
+    { month: 'Apr', revenue: 600, conversion: 42 },
+    { month: 'May', revenue: 500, conversion: 38 },
+    { month: 'Jun', revenue: 700, conversion: 55 },
+    { month: 'Jul', revenue: 520, conversion: 48 },
+    { month: 'Aug', revenue: 650, conversion: 53 },
+    { month: 'Sep', revenue: 610, conversion: 47 },
+    { month: 'Oct', revenue: 580, conversion: 49 },
+    { month: 'Nov', revenue: 590, conversion: 50 },
+    { month: 'Dec', revenue: 570, conversion: 46 },
+  ];
