@@ -12,6 +12,7 @@ import PlatForm_Setup from "../pages/platform_setup/PlatForm_Setup";
 import AI_Agent from "../pages/ai_agent/AI_Agent";
 import App from "../App";
 import CampaignDetails from "../pages/campaign/components/CampaignDetails";
+import ProtectedRoute from "../middleware/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -24,10 +25,10 @@ const router = createBrowserRouter([
   },
   {
     path: "/",
-    element: <App />, // Sidebar + main layout
+    element: <ProtectedRoute><App /></ProtectedRoute>, // Sidebar + main layout
     children: [
       {
-        path: "/",
+        path: "/platform-setup",
         element: <PlatForm_Setup />,
       },
       {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
         element: <AI_Agent />,
       },
       {
-        path: "/dashboard",
+        path: "/",
         element: <Dashboard />,
       },
       {
