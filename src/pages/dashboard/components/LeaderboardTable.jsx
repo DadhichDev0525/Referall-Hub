@@ -25,8 +25,8 @@ const LeaderboardTable = () => (
           </tr>
         </thead>
         <tbody>
-          {leaderboardData.map(([rank, name, rate, sent, success, revenue]) => (
-            <tr className="text-[#333333] border-b border-[#e5e7eb] text-sm">
+          {leaderboardData.map(([rank, name, rate, sent, success, revenue],idx) => (
+            <tr key={idx} className="text-[#333333] border-b border-[#e5e7eb] text-sm">
             <td className="py-4">{rank}</td>
             <td>{name}</td>
             <td>{rate}</td>

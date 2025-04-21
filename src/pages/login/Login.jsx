@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate,Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import Button from "../../components/Button";
 import { PiEyeClosedDuotone, PiEye } from "react-icons/pi";
 
@@ -29,12 +30,16 @@ const Login = () => {
 
       if (res.ok) {
         localStorage.setItem("token", data.token);
+        toast.success("Login successful!");
         navigate("/");
       } else {
-        setError(data.error || "Login failed");
+        const errorMessage = `${data.error}, try eve.holt@reqres.in//cityslicka` || "Login failed, try eve.holt@reqres.in//cityslicka";
+        setError(errorMessage);
+        toast.error(data.error || "Login failed");
       }
     } catch (err) {
-      setError("Something went wrong");
+      setError("Something went wrong, try eve.holt@reqres.in//cityslicka");
+      toast.error("Something went wrong");
     }
   };
 

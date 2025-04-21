@@ -21,8 +21,8 @@ const RecentActivity = () => {
               ],
               ["You reached 50 referrals milestone!", "30-4-2024", "8:20 AM"],
               ["You updated your referral campaign", "31-4-2024", "7:00 AM"],
-            ].map(([text, date, time]) => (
-              <tr className="text-[#646464] ">
+            ].map(([text, date, time],idx) => (
+              <tr key={idx} className="text-[#646464] ">
                 <td className="py-4">{text}</td>
                 <td>{date}</td>
                 <td>{time}</td>

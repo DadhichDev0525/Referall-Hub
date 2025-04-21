@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import Button from "../../components/Button";
 import { PiEyeClosedDuotone, PiEye } from "react-icons/pi";
 
@@ -19,25 +20,29 @@ const Register = () => {
     setError("");
     if (form.password !== form.confirmPassword) {
       setError("Passwords do not match");
+      toast.error("Passwords do not match");
       return;
     }
     try {
       const res = await fetch("https://reqres.in/api/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({email:'eve.holt@reqres.in', password:'cityslicka'}),
       });
 
       const data = await res.json();
 
       if (res.ok) {
         localStorage.setItem("token", data.token);
+        toast.success("Registration successful!, User Logged in!");
         navigate("/");
       } else {
-        setError(data.error || "Login failed");
+        setError(data.error || "Registration failed");
+        toast.error(data.error || "Login failed");
       }
     } catch (err) {
       setError("Something went wrong");
+      toast.error("Something went wrong");
     }
   };
 

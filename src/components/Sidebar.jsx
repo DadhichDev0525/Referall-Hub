@@ -3,9 +3,9 @@ import { FiGrid, FiCpu, FiHome, FiUsers, FiTrendingUp, FiUser, FiSettings, FiHel
 import { NavLink } from "react-router-dom";
 
 const navItems = [
-  { label: "Platform Setup", icon: '/assets/navIcons/PlatForm_Setup.png', path: "/" },
+  { label: "Platform Setup", icon: '/assets/navIcons/PlatForm_Setup.png', path: "/platform-setup" },
   { label: "AI Agent", icon: "/assets/navIcons/Ai_Agent.png", path: "/ai-agent" },
-  { label: "Dashboard", icon:  "/assets/navIcons/Dashboard.png", path: "/dashboard" },
+  { label: "Dashboard", icon:  "/assets/navIcons/Dashboard.png", path: "/" },
   { label: "Campaign", icon:  "/assets/navIcons/Campaign.png", path: "/campaign" },
   { label: "Promoters", icon:  "/assets/navIcons/Promoters.png", path: "/promoters" },
   { label: "Leads", icon:  "/assets/navIcons/Leads.png", path: "/leads" },
