@@ -23,12 +23,14 @@ export default function PlatformSetupStep4({ form, onNext }) {
             form,
             access_token
           })
+          console.log(res)
           if(res.status===201){
             localStorage.setItem("setup_complete", "true");
             toast.success(res.data?.message || "BusinessOwner created!")
             navigate('/')
           }
         }catch(err){
+          console.log(err)
           if(err.status === 400){
             toast.error(err.response?.data.user[0] || "Something went wrong")
             localStorage.setItem("setup_complete", "true");

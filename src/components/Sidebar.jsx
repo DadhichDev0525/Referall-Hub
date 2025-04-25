@@ -18,7 +18,6 @@ const bottomItems = [
 
 const Sidebar = () => {
   const setupComplete = localStorage.getItem("setup_complete") === "true";
-  console.log(setupComplete)
   return (
     <div className="max-w-[245px] min-w-[150px] w-full sticky left-0 top-0 h-screen bg-white border-r border-[#EFF0F6] flex flex-col justify-between py-6 pr-4">
       {/* Top Nav Items */}
