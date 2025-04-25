@@ -32,7 +32,7 @@ const Register = () => {
       return;
     }
     try {
-      const res = await axios.post("http://34.10.166.233/auth/register", {
+      const res = await axios.post("/api/register", {
         full_name: form.firstname + " " + form.lastname,
         email: form.email,
         password: form.password,

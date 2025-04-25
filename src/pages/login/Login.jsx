@@ -21,7 +21,7 @@ const Login = () => {
     e.preventDefault();
     setError("");
     try{
-      const res = await axios.post("http://34.10.166.233/auth/login",{
+      const res = await axios.post("/api/login",{
         email: form.email,
         password: form.password
       })

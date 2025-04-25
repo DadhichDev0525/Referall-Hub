@@ -19,11 +19,9 @@ export default function PlatformSetupStep4({ form, onNext }) {
     }else {
         onNext()
         try{
-          const res = await axios.post("http://34.10.166.233/auth/create-business-owner", form,
-            {
-            headers:{
-              Authorization:`Bearer ${access_token}`
-            }
+          const res = await axios.post('/api/create-business-owner', {
+            form,
+            access_token
           })
           if(res.status===201){
             localStorage.setItem("setup_complete", "true");

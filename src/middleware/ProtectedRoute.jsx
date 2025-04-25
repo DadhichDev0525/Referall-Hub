@@ -11,7 +11,7 @@ const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     const verifyToken = async () => {
       try {
-        const res = await axios.get("http://34.10.166.233/auth/verify-token", {
+        const res = await axios.get("/api/verify-token", {
           headers: {
             Authorization: `Bearer ${access_token}`,
           },
@@ -24,7 +24,7 @@ const ProtectedRoute = ({ children }) => {
       } catch (err) {
         if (err.response?.status === 401) {
           try {
-            const resp = await axios.post("http://34.10.166.233/auth/refresh", {
+            const resp = await axios.post("/api/refresh", {
               refresh: refresh_token,
             });
 

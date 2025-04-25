@@ -18,7 +18,7 @@ const PastPromoters = () => {
     useEffect(()=>{
       const getCampaigns = async()=>{
         try{
-          const res = await axios.get("http://34.10.166.233/campaigns/get-all-campaigns",{
+          const res = await axios.get("/api/get-all-campaigns",{
             headers:{
               Authorization:`Bearer ${access_token}`
             }
