@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaRegEye } from "react-icons/fa";
 import { GoTrash } from "react-icons/go";
@@ -6,11 +6,35 @@ import { TbBrandGithubCopilot } from "react-icons/tb";
 import { defaultCampaigns } from "../../../data/campaigns";
 import Button from "../../../components/Button";
 import CreateCampaignModal from "./CreateCampaign";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const PastPromoters = () => {
     const [campaigns, setCampaigns] = useState(defaultCampaigns);
     const [searchQuery, setSearchQuery] = useState("");
     const [showModel, setShowModel] = useState(false);
+    const access_token = localStorage.getItem("access_token")
+
+    useEffect(()=>{
+      const getCampaigns = async()=>{
+        try{
+          const res = await axios.get("http://34.10.166.233/campaigns/get-all-campaigns",{
+            headers:{
+              Authorization:`Bearer ${access_token}`
+            }
+          })
+          if(res.status === 200 ){
+            setCampaigns(()=> res.data.length > 0 ? [...defaultCampaigns, ...res.data] : defaultCampaigns )
+          }
+        }catch(err){
+          console.log(err)
+          if(err.status === 404){
+            toast.error(err.response?.data.message || "Business Owner not created !!")
+          }
+        }
+      }
+      getCampaigns()
+    },[access_token])
  
     const handleDelete = (id) => {
         setCampaigns((prev) => prev.filter((c) => c.id !== id));
@@ -37,7 +61,7 @@ const PastPromoters = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center my-4">
+      <div className="flex flex-col md:flex-row justify-between  gap-2 my-4">
         <Button onClick={()=>setShowModel(true)} className=" px-4 py-2 max-w-max">
           <span>+ Create New Campaign</span>
         </Button>
@@ -56,7 +80,7 @@ const PastPromoters = () => {
         {filteredCampaigns.length} Campaigns &#x2022; {filteredCampaigns.filter(c => c.status === "Active").length} Active
       </div>}
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
         {filteredCampaigns.map((campaign) => (
           <div
             key={campaign.id}

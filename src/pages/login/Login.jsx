@@ -3,6 +3,7 @@ import { useNavigate,Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Button from "../../components/Button";
 import { PiEyeClosedDuotone, PiEye } from "react-icons/pi";
+import axios from "axios";
 
 
 const Login = () => {
@@ -10,6 +11,7 @@ const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
     const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+  const setupComplete = localStorage.getItem("setup_complete") === "true";
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -18,28 +20,26 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    try{
+      const res = await axios.post("http://34.10.166.233/auth/login",{
+        email: form.email,
+        password: form.password
+      })
 
-    try {
-      const res = await fetch("https://reqres.in/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        localStorage.setItem("token", data.token);
+      if(res.status === 200){
+        localStorage.setItem("access_token", res.data.access);
+        localStorage.setItem("refresh_token", res.data.refresh);
         toast.success("Login successful!");
-        navigate("/");
-      } else {
-        const errorMessage = `${data.error}, try eve.holt@reqres.in//cityslicka` || "Login failed, try eve.holt@reqres.in//cityslicka";
-        setError(errorMessage);
-        toast.error(data.error || "Login failed");
+        if (!setupComplete) {
+          navigate("/platform-setup");
+        } else {
+          navigate("/");
+        }
       }
-    } catch (err) {
-      setError("Something went wrong, try eve.holt@reqres.in//cityslicka");
-      toast.error("Something went wrong");
+    }catch(err){
+      console.log(err)
+      setError("Something went wrong")
+      toast.error("Something went wrong")
     }
   };
 
@@ -68,13 +68,11 @@ const Login = () => {
             <input
               type="email"
               name="email"
-              value={form.email}
-              onChange={handleChange}
               placeholder="Enter your email"
-              className="w-full px-4 py-2 border rounded focus:outline-none focus:ring focus:border-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none "
               required
             />
-            <Button className="my-4">
+            <Button className="my-4 py-2.5">
                 Send Magic Link
             </Button>
             </div>
@@ -97,7 +95,7 @@ const Login = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="Enter your email"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none "
               required
             />
           </div>
@@ -113,7 +111,7 @@ const Login = () => {
               value={form.password}
               onChange={handleChange}
               placeholder="Enter your password"
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring focus:border-blue-500"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none "
               required
             />
           </div>

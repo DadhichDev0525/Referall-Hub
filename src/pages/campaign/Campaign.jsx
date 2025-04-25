@@ -22,7 +22,7 @@ const Campaign = () => {
   return (
     <div>
     <Navbar title = 'Create & Manage Referral Campaigns' />
-    <div className="flex gap-2 justify-between bg-white rounded-lg max-w-1/2 px-4 m-6">
+    <div className="flex gap-2 justify-between bg-white rounded-lg md:max-w-1/2 px-4 m-6">
         <button
           onClick={() => setActiveTab("past")}
           className={`px-4 w-1/3 py-1.5 rounded text-sm cursor-pointer font-medium ${

@@ -1,12 +1,13 @@
 import Navbar from "../../components/Navbar"
-import UnderDevelopment from "../../components/UnderDevelopment"
+import SetupSteps from "./components/SetupSteps"
 
 const PlatForm_Setup = () => {
+
   return (
     <div>
     <Navbar title = 'Platform Setup' />
      <div className='p-4 m-6 bg-white shadow rounded-lg'>
-        <UnderDevelopment />
+       <SetupSteps />
       </div>
      </div>
   )

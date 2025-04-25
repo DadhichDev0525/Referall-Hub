@@ -13,7 +13,7 @@ const LeaderboardTable = () => (
   <div className="bg-white rounded-xl shadow p-4">
     <div className="text-lg font-semibold mb-4">Leaderboard Table View</div>
     <div className="bg-[#FDFDFD] rounded p-4 border border-[#CBCBCB] overflow-auto">
-      <table className="min-w-full text-left">
+      <table className="min-w-full text-left md:overflow-x-scroll">
         <thead>
           <tr className="text-[#333333] font-medium text-sm border-b border-[#c4c2c2]">
             <th className="py-3">Rank</th>

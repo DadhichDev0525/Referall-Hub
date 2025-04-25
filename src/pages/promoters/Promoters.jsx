@@ -28,7 +28,7 @@ const Promoters = () => {
           </div>
 
         {/* Metrics Section */}
-        <div className="grid grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <MetricCard title="Total Customers" value="8" sub={12} icon='/assets/dashboard/active_campaign.png' />
           <MetricCard title="New Customers" value="94" sub={8} icon='/assets/dashboard/total_promoters.png' />
           <MetricCard title="Average Conversion rate" value="64%"sub={-3} icon='/assets/dashboard/conversion_rate.png' />
@@ -60,7 +60,8 @@ const Promoters = () => {
         </div>
 
         {/* Promoters Table */}
-        <table className="min-w-full text-sm text-left text-gray-700 border border-[#D9D9D9] rounded-b-xl overflow-hidden">
+        <div className="overflow-x-scroll">
+        <table className=" min-w-[1000px] text-sm text-left text-gray-700 border border-[#D9D9D9] rounded-b-xl overflow-hidden">
           <thead className="bg-[#FDFDFD] text-[#646464] border-b border-[#E6E6E6]">
             <tr>
               <th className="px-4 py-2 invisible"><input type="checkbox" /></th>
@@ -101,6 +102,7 @@ const Promoters = () => {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
       {/* New Promoter Modal */}
       {showModel && <NewPromoterModal onClose={() => setShowModal(false)} />}
