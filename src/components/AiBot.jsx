@@ -58,7 +58,6 @@ const AIAssistant = ({closeChat}) => {
         <button 
         onClick={() => {
             if (message) {
-              console.log("Message sent:", message);
               setMessage("");
             }
           }}

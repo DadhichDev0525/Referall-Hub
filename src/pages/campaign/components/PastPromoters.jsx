@@ -27,7 +27,6 @@ const PastPromoters = () => {
             setCampaigns(()=> res.data.length > 0 ? [...defaultCampaigns, ...res.data] : defaultCampaigns )
           }
         }catch(err){
-          console.log(err)
           if(err.status === 404){
             toast.error(err.response?.data.message || "Business Owner not created !!")
           }

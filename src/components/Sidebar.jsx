@@ -1,5 +1,5 @@
-import React from "react";
-import { FiGrid, FiCpu, FiHome, FiUsers, FiTrendingUp, FiUser, FiSettings, FiHelpCircle } from "react-icons/fi";
+import {useState, useEffect} from "react";
+
 import { NavLink } from "react-router-dom";
 
 const navItems = [
@@ -17,7 +17,19 @@ const bottomItems = [
 ];
 
 const Sidebar = () => {
-  const setupComplete = localStorage.getItem("setup_complete") === "true";
+  const [setupComplete, setSetupComplete] = useState(localStorage.getItem("setup_complete") === "true")
+
+  useEffect(()=>{
+    const updateSetupComplete =(e)=>{
+      if(e.key === 'setup_complete'){
+        setSetupComplete(localStorage.getItem("setup_complete") === "true")
+      }
+    }
+    window.addEventListener("storage",updateSetupComplete)
+
+    return ()=> window.removeEventListener("storage",updateSetupComplete)
+  },[])
+
   return (
     <div className="max-w-[245px] min-w-[150px] w-full sticky left-0 top-0 h-screen bg-white border-r border-[#EFF0F6] flex flex-col justify-between py-6 pr-4">
       {/* Top Nav Items */}

@@ -19,7 +19,6 @@ export default async function handler(req, res) {
 
       res.status(response.status).json(response.data);
     } catch (err) {
-      console.log(err);
       if (err.response?.status === 404) {
         return res.status(404).json({
           message: err.response?.data?.message || 'Business Owner not created !!',
