@@ -1,7 +1,14 @@
-import React from "react";
+import {useState} from "react";
 import Button from "../../../components/Button";
 
-const PlatformSetupStep1 = ({ form, handleChange , onNext }) => {
+const PlatformSetupStep1 = ({ form, handleChange, onNext }) => {
+  const [fileName, setFileName] = useState("");
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setFileName(file.name); // Set the file name to state
+    }}
   return (
     <div className="p-6 md:p-10 space-y-6 max-w-4xl mx-auto h-screen">
       {/* Heading */}
@@ -18,15 +25,18 @@ const PlatformSetupStep1 = ({ form, handleChange , onNext }) => {
       {/* Form */}
       <form onSubmit={onNext} className="space-y-6 flex flex-col ">
         {/* Logo + Description */}
-        <div>
+        <div >
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Business Logo
           </label>
-          <div
-            className="px-4 py-2 border border-gray-300 rounded-md text-sm text-gray-700 hover:bg-gray-100"
-          >
-            <input type="file" hidden />
-            Choose Image
+          <div className=" flex items-center gap-2">
+            <label className="inline-block px-4 py-2 max-w-max border border-gray-300 rounded-md text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">
+              Choose Image
+              <input type="file" hidden onChange={handleFileChange} />
+            </label>
+            {fileName && (
+              <span className="ml-2 text-sm text-gray-700">{fileName}</span> // Display file name
+            )}
           </div>
         </div>
 
@@ -158,7 +168,9 @@ const PlatformSetupStep1 = ({ form, handleChange , onNext }) => {
             </select>
           </div>
           <div>
-            <label className="text-sm font-medium text-gray-700">City <span className="text-red-500">*</span></label>
+            <label className="text-sm font-medium text-gray-700">
+              City <span className="text-red-500">*</span>
+            </label>
             <select
               name="city"
               value={form?.city || ""}
@@ -182,7 +194,9 @@ const PlatformSetupStep1 = ({ form, handleChange , onNext }) => {
 
           {/* Row 5 */}
           <div>
-            <label className="text-sm font-medium text-gray-700">State <span className="text-red-500">*</span></label>
+            <label className="text-sm font-medium text-gray-700">
+              State <span className="text-red-500">*</span>
+            </label>
             <select
               name="state"
               value={form?.state || ""}
@@ -222,7 +236,9 @@ const PlatformSetupStep1 = ({ form, handleChange , onNext }) => {
 
         {/* Next Button */}
         <div className="pt-4 self-center min-w-sm">
-          <Button className="py-2.5 " onClick={onNext}>Next</Button>
+          <Button className="py-2.5 " onClick={onNext}>
+            Next
+          </Button>
         </div>
       </form>
     </div>
