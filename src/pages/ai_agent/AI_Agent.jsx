@@ -119,10 +119,10 @@ const AI_Agent = () => {
   return (
     <div>
     <Navbar title = 'Ai Agent' />
-     <div className='p-4 m-6 bg-white shadow rounded-lg'>
-    <div className="flex flex-col h-screen rounded-lg overflow-hidden bg-white">
+     <div className='p-2 m-4 bg-white shadow rounded-lg'>
+    <div className="flex flex-col h-[85vh] rounded-lg overflow-hidden bg-white">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 shadow">
+      <div className="flex items-center justify-between p-3 shadow">
         <div className="flex items-center gap-2">
             <img src="/assets/navIcons/Ai_Agent.png" alt='AI Icon' />
           <span className="font-medium">AI Agent</span>
@@ -189,8 +189,8 @@ const AI_Agent = () => {
       </div>
       
       {/* Input */}
-      <div className="border-t border-[#CCCCCC] p-4">
-      <div className="mt-4">
+      <div className="border-t border-[#CCCCCC] px-4 ">
+      <div className="mt-2">
           <p className="font-medium text-[#1C1C1C] mb-2">Quick Links</p>
           <div className="flex flex-col md:flex-row justify-between gap-2">
             {['CREATE CAMPAIGN', 'VIEW INSIGHTS', 'FOLLOW UP', 'VIEW REFERRALS'].map((link) => (

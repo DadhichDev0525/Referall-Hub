@@ -2,7 +2,7 @@ import { FaArrowTrendDown, FaArrowTrendUp } from "react-icons/fa6";
 
 const MetricCard = ({ title, value, sub, icon }) => 
   (
-    <div className="flex sm:flex-col gap-4 bg-white rounded-xl shadow p-4">
+    <div className="flex sm:flex-col gap-1 bg-white rounded-lg shadow p-3">
         <div className="flex gap-2">
         <img src={icon} alt="icon" className="lg:w-15 lg:h-15 w-10 h-10" />
         <div className="flex-1">
@@ -13,7 +13,7 @@ const MetricCard = ({ title, value, sub, icon }) =>
           <div className="flex-1 md:self-center">
           {sub && (
             <div
-              className={`flex flex-col xl:flex-row items-center text-sm font-medium gap-2 ${
+              className={`flex flex-col xl:flex-row items-center text-sm font-medium gap-x-2 ${
                 sub > 0 ? "text-green-500" : "text-red-500"
               }`}
             >

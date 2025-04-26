@@ -21,7 +21,8 @@ const Promoters = () => {
   return (
     <div>
       <Navbar title="Manage and monitor your promoter referral activities" />
-      <div className="p-4 m-6 bg-white rounded-lg shadow">
+      <div className="px-2 md:px-6 py-4 w-full">
+      <div className="p-4 bg-white rounded-lg shadow w-full">
           <div className="flex gap-2 max-w-1/2 mb-4">
             <Button className="max-w-max px-3 py-1.5 "  onClick={() => setShowModal(true)}>+ New Promoter</Button>
             <button className="bg-[#FFF5F0] text-[#F2994A] px-3 py-1.5 w-1/2 text-sm font-medium rounded">Ask Past Customers For Referrals</button>
@@ -61,7 +62,7 @@ const Promoters = () => {
 
         {/* Promoters Table */}
         <div className="overflow-x-scroll">
-        <table className=" min-w-[1000px] text-sm text-left text-gray-700 border border-[#D9D9D9] rounded-b-xl overflow-hidden">
+        <table className=" min-w-max w-full text-sm text-left text-gray-700 border border-[#D9D9D9] rounded-b-xl overflow-hidden">
           <thead className="bg-[#FDFDFD] text-[#646464] border-b border-[#E6E6E6]">
             <tr>
               <th className="px-4 py-2 invisible"><input type="checkbox" /></th>
@@ -103,6 +104,7 @@ const Promoters = () => {
           </tbody>
         </table>
         </div>
+      </div>
       </div>
       {/* New Promoter Modal */}
       {showModel && <NewPromoterModal onClose={() => setShowModal(false)} />}

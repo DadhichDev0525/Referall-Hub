@@ -67,7 +67,7 @@ export default function SetupSteps() {
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
-      <div className="w-80 bg-[#F7F9FF] p-6 flex flex-col sticky left-0 top-0">
+      <div className="w-48 md:w-64 lg:w-80  bg-[#F7F9FF] p-1 md:p-3 lg:p-6 flex flex-col sticky left-0 top-0">
         <div className="mb-6 border-b border-[#CCC] pb-4">
           <h2 className="text-lg  text-[#305AFA]">Get Started with ReferralHub</h2>
           <p className="text-[#666] text-sm mt-2">
@@ -87,28 +87,28 @@ export default function SetupSteps() {
               >
                 {/* Status indicator */}
                 {status === 'completed' ? (
-                  <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center mr-3">
-                    <FaCheck className="w-5 h-5 text-white" />
+                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-green-500 flex items-center justify-center mr-3">
+                    <FaCheck className="w-4 h-4 md:w-5 md:h-5 text-white" />
                   </div>
                 ) : status === 'in-progress' ? (
-                  <div className="w-8 h-8 rounded-full border border-[#305AFA] flex items-center justify-center mr-3">
-                    <div className='w-4 h-4 rounded-full bg-[#305AFA]' />
+                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full border border-[#305AFA] flex items-center justify-center mr-3">
+                    <div className='w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#305AFA]' />
                   </div>
                 ) : (
-                  <div className="w-8 h-8 rounded-full border-2 border-[#AAA] mr-3" />
+                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full border-2 border-[#AAA] mr-3" />
                 )}
 
                 {/* Step text */}
                 <div>
-                  <div className="font-medium text-[#000]">{step.title}</div>
+                  <div className="font-medium text-sm md:text-base text-[#000]">{step.title}</div>
                   {status === 'completed' && (
-                    <div className="text-green-500 text-sm">Completed</div>
+                    <div className="text-green-500 text-xs md:text-sm">Completed</div>
                   )}
                   {status === 'in-progress' && (
-                    <div className="text-blue-500 text-sm">In Progress</div>
+                    <div className="text-blue-500 text-xs md:text-sm">In Progress</div>
                   )}
                   {status === 'not-started' && (
-                    <div className="text-[#333] text-sm">Not Started</div>
+                    <div className="text-[#333] text-xs md:text-sm">Not Started</div>
                   )}
                 </div>
               </div>
@@ -117,7 +117,7 @@ export default function SetupSteps() {
         </div>
       </div>
      
-        <div className="flex-1 justify-center items-center flex max-w-xl mx-auto min-h-screen overflow-y-scroll scroll-on-hover">
+        <div className="flex-1  mx-auto min-h-screen overflow-y-scroll scroll-on-hover">
           
           {/* Current step form */}
           {steps[currentStep].formComponent}

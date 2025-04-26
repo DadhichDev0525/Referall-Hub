@@ -13,7 +13,7 @@ const Register = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    role: "",
+    role: "BusinessOwner",
     phone: "",
   });
   const [showPassword, setShowPassword] = useState(false);
@@ -72,8 +72,8 @@ const Register = () => {
       <div className="w-full max-w-lg bg-white p-8 rounded-2xl shadow-xl z-10 mt-5">
         {error && <div className="text-red-500 text-sm mb-4">*{error}</div>}
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="flex justify-between gap-2">
-            <div className="w-1/2">
+          <div className="flex flex-col sm:flex-row justify-between gap-2">
+            <div className="sm:w-1/2">
             <label className="block text-gray-600 text-sm mb-1">
               First Name
             </label>
@@ -87,7 +87,7 @@ const Register = () => {
               required
             />
             </div>
-            <div className="w-1/2">
+            <div className="sm:w-1/2">
             <label className="block text-gray-600 text-sm mb-1">
               Last Name
             </label>
@@ -114,8 +114,7 @@ const Register = () => {
               required
             />
           </div>
-          <div className="flex justify-between">
-            <div className="w-1/2">
+            <div >
               <label className="block text-gray-600 text-sm mb-1">
                 Phone Number
               </label>
@@ -128,23 +127,6 @@ const Register = () => {
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none "
               />
             </div>
-            <div className="flex-1 ml-2">
-              <label className="block text-gray-600 text-sm mb-1">Role</label>
-              <select
-                name="role"
-                value={form.role}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none"
-                required
-              >
-                <option value="" disabled hidden>
-                  Select your role
-                </option>
-                <option value="BusinessOwner">Business Owner</option>
-                <option value="Promoter">Referral Partner</option>
-              </select>
-            </div>
-          </div>
           <div>
             <label className="block text-gray-600 text-sm mb-1">
               Create Password

@@ -2,8 +2,8 @@ const RecentActivity = () => {
   return (
     <div className="bg-white rounded-xl shadow p-4">
       <div className="text-lg font-semibold mb-4">Recent Activities</div>
-      <div className="bg-[#FDFDFD] rounded p-4 border border-[#CBCBCB">
-        <table className="min-w-full text-left">
+      <div className="bg-[#FDFDFD] rounded p-4 border border-[#CBCBCB] overflow-x-auto">
+        <table className="min-w-max w-full text-left">
           <thead>
             <tr className="border-b border-[#c4c2c2]">
               <th>Activity</th>

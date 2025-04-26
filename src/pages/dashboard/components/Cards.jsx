@@ -2,9 +2,9 @@
 
 export const KpiCard = ({ title, percentage, trackColor, progressColor }) => {
   const bg = `conic-gradient(${progressColor} ${percentage}%, ${trackColor} ${percentage}% 100%)`;
-  const size = 150;
+  const size = 100;
   return (
-    <div className="bg-white rounded shadow p-4 flex flex-col gap-5 items-center justify-center">
+    <div className="bg-white rounded-lg shadow p-2 lg:p-3 flex flex-col gap-3 items-center justify-center">
       <div className=" text-gray-500">{title}</div>
       <div
         className="rounded-full flex items-center justify-center text-sm font-semibold text-gray-800"

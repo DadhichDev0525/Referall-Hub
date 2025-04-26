@@ -24,10 +24,10 @@ const Dashboard = () => {
         )}
       </div>
       <Navbar title="Dashboard" />
-      <div className="p-4 m-6 bg-white shadow rounded-lg">
-        <div className="p-4 space-y-6">
+      <div className="mx-4">
+        <div className="p-4 space-y-4">
           {/* Top Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <MetricCard
               title="Total Promoters"
               value="1,234"
@@ -54,7 +54,7 @@ const Dashboard = () => {
           </div>
 
           {/* KPIs */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <KpiCard
               title="Repeat Referral Rate"
               percentage={42}

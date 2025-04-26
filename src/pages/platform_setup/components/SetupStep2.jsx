@@ -14,7 +14,7 @@ const PlatformSetupStep2 = ({onNext}) => {
     <span className="mx-2 text-sm text-gray-500">or</span>
   </div>
 
-  <div className="border-2 border-dashed border-[#305AFA]/80 rounded-md py-10 px-4 text-center text-gray-500 w-3/4">
+  <div className="border-2 border-dashed border-[#305AFA]/80 rounded-md py-10 px-4 text-center text-gray-500 w-full lg::w-3/4">
     <div className="text-4xl mb-2">📤</div>
     <p>Drag and drop files here</p>
     <p className="my-2 text-sm text-gray-500">or</p>

@@ -6,7 +6,7 @@
   }
   
   .scroll-on-hover:hover::-webkit-scrollbar {
-    width: 2px;
+    width: 0px;
   }
   
   .scroll-on-hover:hover::-webkit-scrollbar-thumb {

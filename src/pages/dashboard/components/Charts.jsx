@@ -26,8 +26,8 @@ import {
 
 const Charts = () => {
   return (
-    <div className="flex flex-col md:flex-row gap-4">
-           <div className="bg-white rounded shadow p-4 flex-1 ">
+    <div className="flex flex-col lg:flex-row gap-4">
+           <div className="bg-white rounded-xl shadow p-4 flex-1 ">
              <div className="text-xl font-semibold mb-6">Promoter Performance Over Time</div>
              <ResponsiveContainer width="100%" height={350}>
                <LineChart data={dataLine}>

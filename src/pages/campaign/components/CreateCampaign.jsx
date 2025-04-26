@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState} from "react";
 import { toast } from "react-toastify";
 import Button from "../../../components/Button";
 
@@ -20,14 +20,14 @@ export default function CreateCampaignModal({ onClose, createCompaign }) {
 }
   return (
     <div className="fixed inset-0 bg-[#000]/50  flex items-center justify-center z-50">
-      <div className="bg-white relative rounded-md shadow-lg w-full max-w-3xl p-6  max-h-[95vh]">
+      <div className="bg-white relative rounded-md shadow-lg w-full max-w-3xl p-6  max-h-[95vh] overflow-y-scroll">
         <div className="text-left border-b border-[#c6c3c3] pb-4 mb-4 ">
           <h2 className="text-lg text-[#1C1C1C] font-semibold">Create New Campaign</h2>
           <p className="text-xs text-[#888888]">
           Create a new referral campaign in just few steps.
         </p>
         </div>
-        <button onClick={onClose} className="text-[#4e4c4c] bg-white rounded px-1.5 pb-0.5 shadow hover:text-gray-800 text-xl absolute -right-3 -top-3">
+        <button onClick={onClose} className="text-[#4e4c4c] hover:bg-[#dad9d9] rounded px-1.5 pb-0.5 cursor-pointer scroll-on-hover hover:text-gray-800 text-xl  absolute right-3 top-3">
             ×
             </button>
        

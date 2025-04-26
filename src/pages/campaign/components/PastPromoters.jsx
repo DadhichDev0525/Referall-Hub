@@ -83,7 +83,7 @@ const PastPromoters = () => {
         {filteredCampaigns.map((campaign) => (
           <div
             key={campaign.id}
-            className=" rounded-xl max-w-xs p-4 bg-[#FBFBFB] shadow relative"
+            className=" rounded-xl min-w-min p-4 bg-[#FBFBFB] shadow relative  flex flex-col justify-between"
           >
             <div className="flex justify-between items-center border-b border-[#cfcdcd] pb-2">
               <div>
