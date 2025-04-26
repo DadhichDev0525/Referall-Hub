@@ -22,12 +22,12 @@ const PlatformSetupStep1 = ({ form, handleChange , onNext }) => {
           <label className="block text-sm font-medium text-gray-700 mb-1">
             Business Logo
           </label>
-          <button
-            type="button"
+          <div
             className="px-4 py-2 border border-gray-300 rounded-md text-sm text-gray-700 hover:bg-gray-100"
           >
+            <input type="file" hidden />
             Choose Image
-          </button>
+          </div>
         </div>
 
         <div>
