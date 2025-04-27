@@ -31,7 +31,7 @@ const Sidebar = () => {
   },[])
 
   return (
-    <div className="max-w-[245px] min-w-[105px] w-full sticky left-0 top-0 h-screen bg-white border-r border-[#EFF0F6] flex flex-col justify-between py-6 pr-4">
+    <div className="max-w-[245px] min-w-[105px] md:min-w-[150px] w-full sticky left-0 top-0 h-screen bg-white border-r border-[#EFF0F6] flex flex-col justify-between py-6 pr-4">
       {/* Top Nav Items */}
       <div className="sm:space-y-2 mt-10">
       {!setupComplete && (
