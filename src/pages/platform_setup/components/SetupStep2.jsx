@@ -3,7 +3,7 @@ import Button from '../../../components/Button';
 
 const PlatformSetupStep2 = ({onNext}) => {
   return (
-    <div className="flex flex-col items-center  p-6  w-full max-w-3xl mx-auto">
+    <div className="flex flex-col items-center  p-6 min-w-md  w-full max-w-3xl mx-auto lg:h-screen h-[60vh] overflow-y-scroll scroll-on-hover">
   <h2 className="text-xl font-semibold text-center mb-12">Import Customer Data: Sync with Zapier or Upload CSV</h2>
 
   <button className="max-w-sm w-full border border-[#305AFA] text-[#305AFA] py-2 rounded-md font-medium hover:bg-[#305AFA]/10 transition">

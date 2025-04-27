@@ -82,8 +82,8 @@ const Dashboard = () => {
           </div>
 
           {/* Graphs */}
-          <Charts />
-          <RecentActivity />
+          {/* <Charts /> */}
+          {/* <RecentActivity /> */}
           <LeaderboardTable />
         </div>
       </div>

@@ -43,7 +43,7 @@ const Charts = () => {
            <div className="flex flex-col gap-2">
            <div className="bg-white rounded-xl min-w-md shadow p-4 flex flex-col">
              <div className="text-xl font-semibold mb-2 border-b border-[#d9d9d9] pb-3">Conversion Success Rate</div>
-             <div className="flex flex-col md:flex-row items-center gap-4 p-4">
+             <div className="flex flex-col md:flex-row items-center justify-center gap-4 p-4">
          {/* Donut Chart */}
          <div className="w-[170px] h-[170px] rotate-120 p-2">
            <ResponsiveContainer width="100%" height="100%">

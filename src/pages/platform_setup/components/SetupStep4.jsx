@@ -40,7 +40,7 @@ export default function PlatformSetupStep4({ form, onNext }) {
   }
 }
   return (
-      <div className="space-y-6 p-4 md:p-8 max-w-4xl mx-auto h-screen">
+      <div className="space-y-6 p-4 md:p-8  w-full max-w-4xl mx-auto lg:h-screen h-[60vh] overflow-y-scroll scroll-on-hover">
         <div className="text-left border-b border-[#c6c3c3] pb-4 mb-4 ">
           <h2 className="text-lg text-[#1C1C1C] font-semibold">Create New Campaign</h2>
           <p className="text-xs text-[#888888]">
@@ -77,8 +77,8 @@ export default function PlatformSetupStep4({ form, onNext }) {
         </div>
 
           <div className="bg-white rounded-md shadow p-4">
-            <div className="flex gap-4 text-[#888]">
-              <div className="w-1/3">
+            <div className="flex flex-col md:flex-row  gap-4 text-[#888]">
+              <div className="md:w-1/3">
                 <label className="block text-sm font-medium mb-1">Reward Type</label>
                 <button className="bg-[#305AFF]/10 text-[#305AFF] font-medium px-4 py-2 rounded-md w-full">
                   <p>{step === 1 ? 'Points': 'Discount'}</p>

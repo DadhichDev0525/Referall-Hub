@@ -65,50 +65,50 @@ export default function SetupSteps() {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className="flex flex-col lg:flex-row h-screen gap-y-5 lg:p-4">
       {/* Sidebar */}
-      <div className="w-48 md:w-64 lg:w-80  bg-[#F7F9FF] p-1 md:p-3 lg:p-6 flex flex-col sticky left-0 top-0">
-        <div className="mb-6 border-b border-[#CCC] pb-4">
+      <div className="w-full lg:w-80 rounded-lg  bg-[#F7F9FF] p-4 lg:p-6 flex flex-col sticky left-0 top-0">
+        <div className="lg:mb-6 mb-2 border-b border-[#CCC] pb-4">
           <h2 className="text-lg  text-[#305AFA]">Get Started with ReferralHub</h2>
-          <p className="text-[#666] text-sm mt-2">
+          <p className="text-[#666] text-sm lg:mt-2">
             To get started with better referrals & rewards, complete your account setup in a few easy steps.
           </p>
         </div>
 
         {/* Steps list */}
-        <div className="space-y-4 mt-2">
+        <div className="flex lg:flex-col flex-wrap items-center lg:items-start  gap-y-2 gap-x-10 mt-2">
           {steps.map((step) => {
             const status = getStepStatus(step.id);
             return (
               <div 
                 key={step.id} 
-                className={`flex items-center cursor-pointer `}
+                className={`flex items-center min-w-min cursor-pointer `}
                 onClick={() => handleStepClick(step.id)}
               >
                 {/* Status indicator */}
                 {status === 'completed' ? (
-                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-green-500 flex items-center justify-center mr-3">
-                    <FaCheck className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                  <div className="w-6 h-6 lg:w-8 lg:h-8 rounded-full bg-[#19C79F] flex items-center justify-center mr-3">
+                    <FaCheck className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
                   </div>
                 ) : status === 'in-progress' ? (
-                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full border border-[#305AFA] flex items-center justify-center mr-3">
-                    <div className='w-3 h-3 md:w-4 md:h-4 rounded-full bg-[#305AFA]' />
+                  <div className="w-6 h-6 lg:w-8 lg:h-8 rounded-full border border-[#305AFA] flex items-center justify-center mr-3">
+                    <div className='w-3 h-3 lg:w-4 lg:h-4 rounded-full bg-[#305AFA]' />
                   </div>
                 ) : (
-                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full border-2 border-[#AAA] mr-3" />
+                  <div className="w-6 h-6 lg:w-8 lg:h-8 rounded-full border-2 border-[#AAA] mr-3" />
                 )}
 
                 {/* Step text */}
                 <div>
-                  <div className="font-medium text-sm md:text-base text-[#000]">{step.title}</div>
+                  <div className="font-medium text-sm lg:text-base text-[#000]">{step.title}</div>
                   {status === 'completed' && (
-                    <div className="text-green-500 text-xs md:text-sm">Completed</div>
+                    <div className="text-[#19C79F] text-xs lg:text-sm">Completed</div>
                   )}
                   {status === 'in-progress' && (
-                    <div className="text-blue-500 text-xs md:text-sm">In Progress</div>
+                    <div className="text-blue-500 text-xs lg:text-sm">In Progress</div>
                   )}
                   {status === 'not-started' && (
-                    <div className="text-[#333] text-xs md:text-sm">Not Started</div>
+                    <div className="text-[#333] text-xs lg:text-sm">Not Started</div>
                   )}
                 </div>
               </div>
@@ -117,7 +117,7 @@ export default function SetupSteps() {
         </div>
       </div>
      
-        <div className="flex-1  mx-auto min-h-screen overflow-y-scroll scroll-on-hover">
+        <div className="flex-1  mx-auto min-h-[95vh] overflow-y-scroll scroll-on-hover">
           
           {/* Current step form */}
           {steps[currentStep].formComponent}

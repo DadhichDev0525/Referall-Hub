@@ -38,12 +38,12 @@ const Leads = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search"
-              className="border border-gray-300 rounded px-2 py-1 text-sm"
+              className="border border-gray-300 rounded px-2 py-1 text-sm focus:outline-0"
             />
             <select
                   value={statusFilter}
                   onChange={(e) => setStatusFilter(e.target.value)}
-                  className="border border-gray-300 text-sm px-2 py-1 rounded"
+                  className="border border-gray-300 text-sm px-2 py-1 rounded focus:outline-0"
                 >
                   <option value="All">All</option>
                   <option value="Pending">Pending</option>

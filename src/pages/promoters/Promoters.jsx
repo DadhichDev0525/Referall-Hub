@@ -25,7 +25,7 @@ const Promoters = () => {
       <div className="p-4 bg-white rounded-lg shadow w-full">
           <div className="flex gap-2 max-w-1/2 mb-4">
             <Button className="max-w-max px-3 py-1.5 "  onClick={() => setShowModal(true)}>+ New Promoter</Button>
-            <button className="bg-[#FFF5F0] text-[#F2994A] px-3 py-1.5 w-1/2 text-sm font-medium rounded">Ask Past Customers For Referrals</button>
+            <button className="hover:bg-[#305AFA]/10 text-[#305AFA] border border-[#305AFA] px-3 py-1.5 w-1/2 text-sm font-medium rounded">Ask Past Customers For Referrals</button>
           </div>
 
         {/* Metrics Section */}
@@ -45,12 +45,12 @@ const Promoters = () => {
               placeholder="Search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="border border-gray-300 rounded px-2 py-1 text-sm"
+              className="border border-gray-300 rounded px-2 py-1 text-sm focus:outline-0"
             />
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="border border-gray-300 text-sm px-2 py-1 rounded"
+              className="border border-gray-300 text-sm px-2 py-1 rounded focus:outline-0"
             >
               <option value="All">All</option>
               <option value="Active">Active</option>

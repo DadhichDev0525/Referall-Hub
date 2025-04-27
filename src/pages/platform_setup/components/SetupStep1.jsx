@@ -10,7 +10,7 @@ const PlatformSetupStep1 = ({ form, handleChange, onNext }) => {
       setFileName(file.name); // Set the file name to state
     }}
   return (
-    <div className="p-6 md:p-10 space-y-6 max-w-4xl mx-auto h-screen">
+    <div className="p-6 md:p-10 space-y-6  mx-auto lg:h-screen h-[65vh] overflow-y-scroll scroll-on-hover">
       {/* Heading */}
       <div className="text-center">
         <h1 className="text-2xl font-semibold text-gray-800">
@@ -52,7 +52,7 @@ const PlatformSetupStep1 = ({ form, handleChange, onNext }) => {
         </div>
 
         {/* Grid Fields */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Row 1 */}
           <div>
             <label className="text-sm font-medium text-gray-700">

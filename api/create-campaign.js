@@ -1,31 +1,31 @@
-// api/get-all-campaigns.js
+// api/create-campaigns.js
 
 import axios from 'axios';
 
 export default async function handler(req, res) {
-  if (req.method === 'GET') {
+  if (req.method === 'POST') {
     try {
       const { access_token } = req.headers; // access_token passed in the request header
 
-      const response = await axios.get('http://34.10.166.233/campaigns/get-all-campaigns', {
+      const response = await axios.get('http://34.10.166.233/create-campaign',req.body, {
         headers: {
           Authorization: `Bearer ${access_token}`,
         },
       });
 
-      if (response.status === 200) {
-        return res.status(200).json(response.data);
+      if (response.status === 201) {
+        return res.status(201).json(response.data);
       }
 
       res.status(response.status).json(response.data);
     } catch (err) {
-      if (err.response?.status === 404) {
-        return res.status(404).json({
+      if (err.response?.status === 400) {
+        return res.status(400).json({
           message: err.response?.data?.message || 'Business Owner not created !!',
         });
       }else if (err.status === 401){
         return res.status(401).json({
-          message : "Token Expired"
+          message : err.response?.data?.messages[0].message ||"Token expire, Please refresh!"
         })
       }
       res.status(500).json({

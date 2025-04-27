@@ -3,8 +3,8 @@ import Button from "../../../components/Button";
 
 const PlatformSetupStep3 = ({ form, handleChange, onNext }) => {
   return (
-    <div className=" p-6 w-full max-w-xl mx-auto">
-      <h2 className="text-lg font-semibold text-center my-12">
+    <div className=" p-6 w-full min-w-sm max-w-2xl mx-auto lg:h-screen h-[55vh] overflow-y-scroll scroll-on-hover">
+      <h2 className="text-lg font-semibold text-center lg:my-12">
         Set Up AI Agent Rules
       </h2>
 

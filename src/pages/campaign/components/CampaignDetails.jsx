@@ -3,6 +3,7 @@ import { defaultCampaigns,linkClicksData,performanceData } from '../../../data/c
 import { Link, useParams } from 'react-router-dom';
 import Navbar from '../../../components/Navbar';
 import MetricCard from '../../../components/MetricCard';
+import { useSelector } from 'react-redux';
 
 const dataPie = [
     { name: 'Referrals Sent', value: 57 },
@@ -20,7 +21,8 @@ const dataPie = [
 
 const CampaignDetails = () => {
 const { campaignId } = useParams();
-const campaign = defaultCampaigns.find(c => c.id === parseInt(campaignId)); 
+const campaigns = useSelector(state=>state.campaigns.data)
+const campaign = campaigns.find(c => c.campaign_id === parseInt(campaignId)); 
 
 if (!campaign) {
    return <div>
@@ -38,12 +40,12 @@ if (!campaign) {
   }
   return (
     <div>
-        <Navbar title={campaign.name} />
-      <div className='p-4'>
+        <Navbar title={campaign.campaign_name} />
+      <div className='px-4 py-2'>
         <Link to="/campaign" className="text-[#666] text-sm hover:underline ">
           &lt; Back
           </Link>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6 mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6 mt-2">
       <MetricCard
               title="Total Promoters"
               value="1,234"
@@ -69,7 +71,7 @@ if (!campaign) {
             />
       </div>
 
-      <div className="flex flex-col md:flex-row gap-4 mb-6">
+      <div className="flex flex-col lg:flex-row gap-4 mb-6">
       <div className="flex-1 bg-white p-6 rounded-2xl shadow ">
         <h2 className="text-lg font-semibold mb-4">Total Link Clicks</h2>
         <ResponsiveContainer width="100%" height={320}>

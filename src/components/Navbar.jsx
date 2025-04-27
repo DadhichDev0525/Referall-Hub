@@ -29,7 +29,7 @@ const Navbar = ({title}) => {
         {/* Profile Section */}
         <div onClick={()=>setIsOpen(!isOpen)} className="relative flex items-center gap-2 cursor-pointer">
           <img
-            src="https://i.pravatar.cc/32"
+            src="/assets/user_icon.jpeg"
             alt="User Avatar"
             className="w-8 h-8 rounded-full"
           />
