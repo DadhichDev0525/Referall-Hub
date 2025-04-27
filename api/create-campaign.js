@@ -5,7 +5,8 @@ import axios from 'axios';
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     try {
-      const access_token  = req.headers.authorization; // access_token passed in the request header
+        const bearerToken = req.headers.authorization;
+        const access_token = bearerToken?.split(' ')[1]; // access_token passed in the request header
 
       const response = await axios.post('http://34.10.166.233/create-campaign',req.body, {
         headers: {
