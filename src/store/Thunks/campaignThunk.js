@@ -25,7 +25,7 @@ export const getAllCampaigns = createAsyncThunk(
           err.response?.data.message || "Business Owner not created !!"
         );
       }else if (err.status === 401){
-        window.location.href('/campaign')
+        window.location.replace('/campaign')
       }else{
         toast.error(err.response?.data.error || "Something went wrong!")
       }
