@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     try {
       const { access_token } = req.headers; // access_token passed in the request header
 
-      const response = await axios.get('http://34.10.166.233/create-campaign',req.body, {
+      const response = await axios.post('http://34.10.166.233/create-campaign',req.body, {
         headers: {
           Authorization: `Bearer ${access_token}`,
         },

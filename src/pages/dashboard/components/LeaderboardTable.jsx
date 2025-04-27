@@ -12,8 +12,8 @@ const leaderboardData = [
 const LeaderboardTable = () => (
   <div className="bg-white rounded-xl shadow p-4 max-w-full">
     <div className="text-lg font-semibold mb-4">Leaderboard Table View</div>
-    <div className="overflow-x-scroll p-1">
-    <div className="bg-[#FDFDFD] rounded p-4 border border-[#CBCBCB] w-full  overflow-x-scroll">
+    <div className="overflow-x-scroll scroll-on-hover p-1">
+    <div className="bg-[#FDFDFD] rounded p-4 border border-[#CBCBCB] w-full scroll-on-hover overflow-x-scroll">
       <table className=" min-w-[1000px] w-full text-left">
         <thead>
           <tr className="text-[#333333] font-medium text-sm border-b border-[#c4c2c2]">
